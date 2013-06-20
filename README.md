@@ -5,8 +5,8 @@ Si tienen alguna duda puedes visitar <https://www.facebook.com/codelabscomunidad
 
 Si no, envianos un twitter a:
 
-[https://twitter.com/LabsCommunity](@LabsCommunity) - CodeLabs
+[@LabsCommunity](https://twitter.com/LabsCommunity) - CodeLabs
 
-[https://twitter.com/Bootmack](@Bootmack) - Jhonatan
+[@Bootmack](https://twitter.com/Bootmack) - Jhonatan
 
-[https://twitter.com/paulrrdiaz](@paulrrdiaz) - Paúl
+[@paulrrdiaz](https://twitter.com/paulrrdiaz) - Paúl
