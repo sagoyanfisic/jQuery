@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+		/* todos los li que esten dentro de ul van a ser de color rojo  */
+		ul li {
+			color: red;
+		}
+		/* solo los li que sean hijos directos de ul van a ser rojos */
+		ul > li {
+			color: blue;
+		}
+		</style>
+		<link id="style" rel="stylesheet" type="text/css" href="rojo.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.js"></script>
+	</head>
+	<body>
+		<h1>Ola k ace?</h1>
+		<button data-css="rojo">Rojo</button>
+		<button data-css="azul">Azul</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('button').click(function(){
+					var data = $(this).data('css')+'.css';
+					$('link').attr('href', data);
+
+					/*
+					.attr() -> sirve para rescatar el valor del atributo que designemos
+						.attr('href') o .attr('src') extraeremos el valor del href o src respectivamente
+						.attr('src', 'http://something.com/images/logo.png') cambiaremos el atributo src del elemento por el que designamos: http://something.com/images/logo.png
+					.data() -> sirve para rescatar el valor del atributo data de la etiqueta html
+					.text() -> sirve para sacar el texto que tengamos dentro de algun elemento
+					.text('cambiado por jQuery') -> sirve apra asignar un texto
+					*/
+				});
+			});
+		</script>
+	</body>
+</html>

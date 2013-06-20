@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+		/* reset */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+		}
+		/* end reset */
+		body {
+			font-family: 'Play', sans-serif;
+		}
+		h1 {
+			text-align: center;
+			margin: 15px 0;
+		}
+		section {
+			width: 960px;
+			background: #f1f1f1;
+			margin: 0 auto;
+			min-height: 300px;
+		}
+		/* cada li es un item */
+		section > ul > li {
+			float: left;
+			position: relative;
+			width: 192px;
+			height: 192px;
+			font-size: 2em;
+			opacity: 0;
+		}
+		section > ul > li > img {
+			width: 100%;
+		}
+		section > ul > li > span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align: center;
+			width: 192px;
+			height: 192px;
+			color: white;
+			background: black;
+			z-index: 5;
+			opacity: 0;
+		}
+		section > ul > li > span > a {
+			display: block;
+			color: black;
+			text-shadow: 0 0 5px white;
+		}
+		section > ul > li > span > a > span {
+			display: block;
+			font-size: 2em;
+		}
+		/* estilos para las ventanas modales */
+		div {
+			position: absolute;
+			top: 67px;
+			left: 50%;
+			text-align: center;
+			width: 600px; /* medida original 640px */
+			padding: 20px;
+			margin: 0 0 0 -320px;
+			background: #ddd;
+			z-index: 999;
+			display: none;
+			box-shadow: 0 0 20px 0 #000;
+		}
+		div > .close {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			line-height: 25px;
+			text-align: center;
+			width: 25px;
+			height: 25px;
+			font-size: 1em;
+			color: white;
+			background: #666;
+			border-radius: 25px;
+			cursor: pointer;
+		}
+		input {
+			position: relative;
+			margin: 0 auto;
+			width: 300px;
+			height: 30px;
+			transition: all .3s linear 0s;
+		}
+		.black {
+			background: black;
+			width: 400px;
+			padding: 0 0 0 15px;
+		}
+		</style>
+		<title>CodeLabs04 - Haciendo el Portafolio...</title>
+		<!-- Importando fuente de google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+		<!-- Importando libreria jQuery -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.js"></script>
+	</head>
+	<body onload="loading();">
+		
+		<h1>Mi portafolio <input placeholder="Ma&ntilde;ana ganamos!!"></h1>
+		<section>
+			<!-- Creando Items -->
+			<ul>
+				<li>
+					<img src="images/img01.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item01" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img02.jpg">
+					<span>
+						OMFG
+						<a data-id="item02" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img03.jpg">
+					<span>
+						Ola k ase
+						<a data-id="item03" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img04.jpg">
+					<span>
+						=D
+						<a data-id="item04" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img01.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item05" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img02.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item06" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img03.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item07" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img04.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item08" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img01.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item09" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img02.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item10" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img03.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item11" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img04.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item12" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img01.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item13" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img02.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item14" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+				<li>
+					<img src="images/img03.jpg">
+					<span>
+						Mi Primer trabajo
+						<a data-id="item15" href="javascript:;">ver m&aacute;s <span>+</span></a>
+					</span>
+				</li>
+			</ul>
+			<!-- end Items -->
+		</section>
+		<!-- Ventanas Modales -->
+		<div id="item01">
+			<h2>Ola k ase? viendo mi tuto o k ase?</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item02">
+			<h2>Mi nombre es Raplh :3</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item03">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item04">
+			<h2>No s&eacute;</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item05">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item06">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item07">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item08">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item09">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item10">
+			<h2>10</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item11">
+			<h2>11</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item12">
+			<h2>12</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item13">
+			<h2>Es jQuery el tuto de bueno</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item14">
+			<h2>14</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div id="item15">
+			<h2>window 15</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<!-- End Ventanas Modales -->
+		<script type="text/javascript">
+		(function(){
+			// creamos variables para tener un código puro e inmaculado...
+			var item = $('section').children('ul').children('li'),
+					div = $('div'),
+					a = item.children('span').children('a');
+
+			
+
+			item.hover(function(){
+				$(this).children('span').stop(true, true).animate({
+					'opacity': '0.8'
+				}); // esto sucederá cuando estemos sobre el elemento
+			}, function(){
+				$(this).children('span').stop(true, true).animate({
+					'opacity': '0'
+				}); // esto sucederá cuando salgamos del elemento
+			});
+
+			div.each(function(i){
+				// con el each recorremos el array 'div'
+				$(this).append('<span class="close">X</span>');
+				// con .append agregamos el elemento span a cada div
+			});
+
+			// creamos un variable que almacena al boton close
+			var close = div.children('span.close');
+			close.click(function(){
+				$(this).parent().fadeOut();
+				// .parent() sirve para seleccionar al elemento padre
+			});
+
+			$('input').hover(function(){
+				$(this).addClass('black');
+			}, function(){
+				$(this).removeClass('black');
+			});
+
+			a.click(function(){
+				var id = $(this).data('id'); // extraemos el valor del atributo data
+				$('#'+ id).siblings('div').slideUp();
+				$('#'+ id).delay(400).slideDown();
+				/*
+					Hacemos este pequeño artificio para indicar el id del elemento que se va a mostrar -'#'+ id-
+					Cada items tiene un attributo data-id diferente entonces llamara a un div -ventana modal- diferente
+				*/
+				/*
+				.delay(time) sirve para crear un intervalo de tiempo de espera
+				*/
+
+ 			});
+			loading = function(){
+				//console.log('hi');
+				item.each(function(e){
+					$(this).delay(200*e).animate({
+						'opacity': 1
+					});
+				});
+			};
+		})();
+		</script>
+	</body>
+</html>
