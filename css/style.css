@@ -1,0 +1,128 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h4, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	}
+
+/* HTML5 Reset */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+	}
+	
+aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block
+	}
+	
+body {
+	line-height: 1;
+	}
+	
+ol, ul {
+	list-style: none;
+	}
+	
+blockquote, q {
+	quotes: none;
+	}
+	
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+	}
+	
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+/* End CSS Reset*/
+/* body */
+html, body {
+	font-family: Arial;
+	color: #777;
+	font-size: 11px;
+	height: 100%;
+	line-height: normal;
+}
+body {
+	overflow-x: hidden;
+}
+/* end body */
+/* general */
+a {
+	text-decoration: none;
+	color: white;
+}
+section {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+	z-index: 1;
+}
+.clear {
+	clear: both;
+}
+/* end general */
+/* content */
+.box {
+	position: relative;
+	width: 600px;
+	margin: 20px auto;
+	font-size: 1.3em;
+	color: red;
+	border: 1px solid red;
+	background: #ddd;
+	padding: 20px;
+	transition: background .3s linear 0s;
+}
+.box > a {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	background: red;
+	padding: 5px 10px;
+	color: white;
+	transition: padding .3s linear 0s;
+}
+#fail {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	z-index: 10;
+	display: none;
+}
+figure {
+	position: absolute;
+	width: 400px;
+	border: 10px solid #ddd; 
+	top: 5%;
+	left: 50%;
+	margin: 0 0 0 -200px;
+	border-radius: 10px;
+	z-index: 15;
+	display: none;
+}
+figure > img {
+	width: 100%;
+	border-radius: 10px;
+}
+figure > .close {
+	position: absolute;
+	top: -25px;
+	right: -25px;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	background: black;
+	color: white;
+	text-align: center;
+	line-height: 25px;
+	cursor: pointer;
+}
+/* end content */
