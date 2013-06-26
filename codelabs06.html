@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Codelabs</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/prefixfree.js"></script>
+		<!--[if (gte IE 6)&(lte IE 8)]>
+	  	<script type="text/javascript" src="js/selectivizr.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<style type="text/css">
+		section > p {
+			margin: 0 0 15px 0;
+		}
+		section > p:nth-child(2n) {
+			color: red;
+		}
+		section > img {
+			float: right;
+			width: 200px;
+		}
+		</style>
+	</head>
+	<body>
+		<section>
+
+		</section>
+		<script type="text/javascript">
+		(function(){
+			/*
+			$(document).click(function(){
+				console.log('hola codelabs');
+			});
+
+			$(document).on('app/facebook', function(){
+				console.log('usando el API de facebook');
+			});
+
+			$(document).trigger('app/facebook');
+			
+				.trigger() -> disparador de eventos
+				.on('evento', function(){
+						
+				});
+			*/
+
+			$.getJSON('http://graph.facebook.com/search?q=dogs', function(result){
+				$.each(result.data, function(){
+					var message = this.message,
+							picture = this.picture;
+					$('section').append('<p>'+ message +'</p>');
+					$('section').append("<img src='"+picture+"' />")
+						//.end().append('<img src="'+ picture + '" />');
+					console.log(picture);
+				});
+			});
+
+		})();
+		</script>
+	</body>
+</html>
